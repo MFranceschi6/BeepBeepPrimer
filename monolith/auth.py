@@ -49,6 +49,7 @@ def strava_token_required(func):
             return redirect('/')
     return _strava_token_required
 
+
 def after_this_request(func):
     if not hasattr(g, 'call_after_request'):
         g.call_after_request = []

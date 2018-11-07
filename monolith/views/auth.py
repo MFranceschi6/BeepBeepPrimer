@@ -23,7 +23,7 @@ def _strava_auth():
     db.session.add(current_user)
     db.session.commit()
     res = fetch_runs_for_user.delay(current_user.id)
-    res.wait();
+    res.wait()
     return redirect('/')
 
 
@@ -36,7 +36,9 @@ def login():
         user = q.first()
         if user is not None and user.authenticate(password):
             login_user(user)
-            return redirect('/fetch')
+            if user.strava_token is not None:
+                return redirect('/fetch')
+            return redirect('/')
     return render_template('login.html', form=form)
 
 
