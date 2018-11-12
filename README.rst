@@ -9,6 +9,8 @@ BeepBeep |travis| |coveralls|
 How to run the app
 -------------------
 
+ATTENTION : statistics won't work on Chrome or Safari, but seriously, who still use them ?
+
 For this application to work, you need to create a Strava API application
 see https://strava.github.io/api/#access and https://www.strava.com/settings/api
 
@@ -26,7 +28,7 @@ You need to export them as environment variables::
     export MAIL_REPORT_SUBJECT="Report"
     export MAIL_MESSAGE_NO_RUN="You did not run in this period!"
 
-## Note:
+Note:
 Google is not allowing you to log in via smtplib because it has flagged this
 sort of login as "less secure", so you have to allow the access. To do so,
 click on this link: https://www.google.com/settings/security/lesssecureapps
